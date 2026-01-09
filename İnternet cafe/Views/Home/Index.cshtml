@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div>
+    <h1>İnternetKafe Yönetim Sistemine Hoşgeldiniz</h1>
+    <p>Yönetmek istediğiniz şeyi seçin</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>💻</h2>
+                <h5>Bilgisayarlar</h5>
+                <p>Bilgisayarları yönet</p>
+                <a href="/Bilgisayar" class="btn btn-primary">Git</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>👥</h2>
+                <h5>Kullanıcılar</h5>
+                <p>Müşterileri yönet</p>
+                <a href="/Kullanici" class="btn btn-success">Git</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>⏱️</h2>
+                <h5>Oturumlar</h5>
+                <p>Oturumları yönet</p>
+                <a href="/Oturum" class="btn btn-warning">Git</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <h4>Hızlı İşlemler</h4>
+    <a href="/Oturum/OturumBaslat" class="btn btn-primary">Oturum Başlat</a>
+    <a href="/Kullanici/Create" class="btn btn-success">Müşteri Ekle</a>
+    <a href="/Bilgisayar/Create" class="btn btn-secondary">Bilgisayar Ekle</a>
+</div>

@@ -1,0 +1,82 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* ========== İNTERNET CAFE ÖZEL STİLLER ========== */
+
+/* TODO: body için arka plan rengi ayarla - background-color: #f5f5f5; */
+ body{
+     background-color:mediumspringgreen;
+ }
+
+/* TODO: .navbar için koyu tema yap - background-color: #2c3e50 !important; */
+ 
+.navbar{
+      background-color:darkgray;
+}
+
+/* TODO: .table tbody tr:hover için hover efekti - background-color: #e8f4f8; */
+.table tbody tr:hover {
+ background-color:mediumspringgreen
+}
+    
+
+
+/* TODO: .btn için geçiş efekti - transition: all 0.3s ease; */
+.btn{
+   transition:all 0.3s ease;
+}
+   
+
+
+/* TODO: h1 için alt çizgi stili:
+   - border-bottom: 3px solid #3498db;
+   - padding-bottom: 10px;
+   - margin-bottom: 20px;
+*/
+h1{
+    border-bottom: 3px solid #b6ff00;
+    padding-bottom:10px;
+    margin-bottom: 20px;
+}
+
+
+/* TODO: .card için gölge efekti - box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
+.card{
+    box-shadow:0 2px 10px rgba (0,0,0,0.1);
+}
+
+/* TODO: .table için köşeleri yuvarla - border-radius: 8px; overflow: hidden; */
+.table{
+    border-radius: 8px; overflow: hidden;
+}
+
+/* TODO: a linkler için renk - color: #3498db; */
+a{
+   color:orange; 
+}
+
+/* TODO: .btn-danger:hover için koyu kırmızı - background-color: #c0392b; */
+.btn-danger:hover{
+    background-color:red;
+}
+   

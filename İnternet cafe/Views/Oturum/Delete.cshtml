@@ -1,0 +1,34 @@
+@* Model tanımla *@
+@model InnternetCafe.Varliklar.Oturum
+
+@* ViewData["Title"] ayarla *@
+@{
+    ViewData["Title"] = "Oturum Sil";
+}
+
+@* h1 başlık *@
+<h1>Oturum Sil</h1>
+
+@* h3 onay mesajı *@
+<h3>Bu oturumu silmek istediğinize emin misiniz?</h3>
+
+@* dl ile oturum bilgilerini göster *@
+<dl class="row">
+    <dt class="col-sm-3">Kullanıcı ID</dt>
+    <dd class="col-sm-9">@Model.KullaniciId</dd>
+
+    <dt class="col-sm-3">Bilgisayar ID</dt>
+    <dd class="col-sm-9">@Model.BilgisayarId</dd>
+
+    <dt class="col-sm-3">Başlangıç Zamanı</dt>
+    <dd class="col-sm-9">@Model.BaslangicZamanı.ToString("dd.MM.yyyy HH:mm")</dd>
+</dl>
+
+@* Form - asp-action="Delete" method="post" *@
+<form asp-action="Delete" method="post">
+    @* Hidden input - Id *@
+    <input type="hidden" asp-for="Id" />
+    @* Sil butonu + İptal linki *@
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

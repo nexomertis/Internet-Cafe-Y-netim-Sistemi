@@ -1,0 +1,56 @@
+@* Model tanımla - IEnumerable<Oturum> *@
+@model IEnumerable<InnternetCafe.Varliklar.Oturum>
+
+@* ViewData["Title"] ayarla *@
+@{
+    ViewData["Title"] = "Oturumlar";
+}
+
+@* h1 başlık *@
+<h1>Oturumlar</h1>
+
+@* Yeni Oturum Başlat butonu *@
+<a asp-action="OturumBaslat" class="btn btn-primary">Yeni Oturum Başlat</a>
+
+@* Tablo - thead: KullaniciId, BilgisayarId, Başlangıç, Bitiş, Ücret, İşlemler *@
+<table class="table">
+    <thead>
+        <tr>
+            @* TODO: "Kullanıcı ID" yerine "Kullanıcı" yaz *@
+            <th>Kullanıcı </th>
+            @* TODO: "Bilgisayar ID" yerine "Bilgisayar" yaz *@
+            <th>Bilgisayar </th>
+            <th>Başlangıç</th>
+            <th>Bitiş</th>
+            <th>Ücret</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @* foreach ile Model'i döndür *@
+        @foreach (var item in Model)
+        {
+            <tr>
+                @* TODO: KullaniciId yerine item.Kullanici.Ad + " " + item.Kullanici.Soyad göster *@
+                <td>@item.Kullanici.Ad @item.Kullanici.Soyad</td>
+                 
+                @* TODO: BilgisayarId yerine item.Bilgisayar.BilgisayarNo göster *@
+                <td>@item.Bilgisayar.BilgisayarNo</td>
+                <td>@item.BaslangicZamanı.ToString("dd.MM.yyyy HH:mm")</td>
+                @* BitisZamani null ise "Devam Ediyor" yaz *@
+                <td>@(item.BitisZamani.HasValue ? item.BitisZamani.Value.ToString("dd.MM.yyyy HH:mm") : "Devam Ediyor")</td>
+                @* ToplamUcret null ise "-" yaz *@
+                <td>@(item.ToplamUcret.HasValue ? item.ToplamUcret.Value + " TL" : "-")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Detay</a>
+                    @* Eğer BitisZamani null ise Bitir linki göster *@
+                    @if (!item.BitisZamani.HasValue)
+                    {
+                        <a asp-action="OturumBitir" asp-route-id="@item.Id">Bitir</a>
+                    }
+                    <a asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

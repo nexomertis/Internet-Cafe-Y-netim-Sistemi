@@ -1,0 +1,24 @@
+@model InnternetCafe.Varliklar.Kullanici
+
+@{
+    ViewData["Title"] = "Kullanıcı Detayları";
+}
+
+<h1>Kullanıcı Detayları</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Ad</dt>
+    <dd class="col-sm-9">@Model.Ad</dd>
+
+    <dt class="col-sm-3">Soyad</dt>
+    <dd class="col-sm-9">@Model.Soyad</dd>
+
+    <dt class="col-sm-3">Telefon</dt>
+    <dd class="col-sm-9">@Model.Telefon</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.Email</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Düzenle</a>
+<a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>

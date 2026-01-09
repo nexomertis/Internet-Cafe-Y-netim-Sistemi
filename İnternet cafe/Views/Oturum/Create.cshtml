@@ -1,0 +1,27 @@
+@* Model tanımla *@
+@model InnternetCafe.Varliklar.Oturum
+
+@* ViewData["Title"] ayarla *@
+@{
+    ViewData["Title"] = "Yeni Oturum";
+}
+
+@* h1 başlık *@
+<h1>Yeni Oturum</h1>
+
+@* Form - asp-action="Create" method="post" *@
+<form asp-action="Create" method="post">
+    @* KullaniciId için input *@
+    <div class="mb-3">
+        <label asp-for="KullaniciId" class="form-label"></label>
+        <input asp-for="KullaniciId" class="form-control" />
+    </div>
+    @* BilgisayarId için input *@
+    <div class="mb-3">
+        <label asp-for="BilgisayarId" class="form-label"></label>
+        <input asp-for="BilgisayarId" class="form-control" />
+    </div>
+    @* Submit butonu + İptal linki *@
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

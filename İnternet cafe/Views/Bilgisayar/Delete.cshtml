@@ -1,0 +1,29 @@
+@model InnternetCafe.Varliklar.Bilgisayar
+
+@{
+    ViewData["Title"] = "Bilgisayar Sil";
+}
+
+<h1>Bilgisayar Sil</h1>
+
+@* Onay mesajı *@
+<h3>Bu bilgisayarı silmek istediğinize emin misiniz?</h3>
+
+@* Silinecek bilgisayarın bilgileri *@
+<dl class="row">
+    <dt class="col-sm-3">Bilgisayar No</dt>
+    <dd class="col-sm-9">@Model.BilgisayarNo</dd>
+
+    <dt class="col-sm-3">Durum</dt>
+    <dd class="col-sm-9">@(Model.Durum ? "Dolu" : "Boş")</dd>
+
+    <dt class="col-sm-3">Saatlik Ücret</dt>
+    <dd class="col-sm-9">@Model.SaatlikUcret TL</dd>
+</dl>
+
+@* Form - POST ile silme işlemi *@
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

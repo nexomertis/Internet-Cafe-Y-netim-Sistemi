@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Oturum Başlat";
+}
+
+<h1>Oturum Başlat</h1>
+
+<form asp-action="OturumBaslat" method="post">
+    
+    <div class="mb-3">
+        <label class="form-label">Kullanıcı</label>
+        <select name="kullaniciId" class="form-control">
+            @foreach (var item in ViewBag.Kullanicilar)
+            {
+                <option value="@item.Id">@item.Ad @item.Soyad</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Bilgisayar</label>
+        <select name="bilgisayarId" class="form-control">
+            @foreach (var item in ViewBag.Bilgisayarlar)
+            {
+                <option value="@item.Id">@item.BilgisayarNo</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Oturumu Başlat</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

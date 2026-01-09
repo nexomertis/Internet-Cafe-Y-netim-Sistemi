@@ -1,0 +1,36 @@
+@model InnternetCafe.Varliklar.Bilgisayar
+
+@{
+    ViewData["Title"] = "Bilgisayar Düzenle";
+}
+
+<h1>Bilgisayar Düzenle</h1>
+
+@* Form oluştur - asp-action="Edit", method="post" *@
+<form asp-action="Edit" method="post">
+    
+    @* Hidden input - Id için (formda görünmez ama POST'ta gider) *@
+    <input type="hidden" asp-for="Id" />
+
+    @* BilgisayarNo için label ve input *@
+    <div class="mb-3">
+        <label asp-for="BilgisayarNo" class="form-label"></label>
+        <input asp-for="BilgisayarNo" class="form-control" />
+    </div>
+
+    @* Durum için checkbox *@
+    <div class="mb-3">
+        <label asp-for="Durum" class="form-label"></label>
+        <input asp-for="Durum" type="checkbox" class="form-check-input" />
+    </div>
+
+    @* SaatlikUcret için input *@
+    <div class="mb-3">
+        <label asp-for="SaatlikUcret" class="form-label"></label>
+        <input asp-for="SaatlikUcret" class="form-control" />
+    </div>
+
+    @* Submit butonu *@
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

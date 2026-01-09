@@ -1,0 +1,34 @@
+@* Model tanımla *@
+@model InnternetCafe.Varliklar.Oturum
+
+@* ViewData["Title"] ayarla *@
+@{
+    ViewData["Title"] = "Oturum Bitir";
+}
+
+@* h1 başlık *@
+<h1>Oturum Bitir</h1>
+
+@* h3 onay mesajı *@
+<h3>Bu oturumu bitirmek istediğinize emin misiniz?</h3>
+
+@* dl ile oturum bilgilerini göster *@
+<dl class="row">
+    <dt class="col-sm-3">Kullanıcı ID</dt>
+    <dd class="col-sm-9">@Model.KullaniciId</dd>
+
+    <dt class="col-sm-3">Bilgisayar ID</dt>
+    <dd class="col-sm-9">@Model.BilgisayarId</dd>
+
+    <dt class="col-sm-3">Başlangıç Zamanı</dt>
+    <dd class="col-sm-9">@Model.BaslangicZamanı.ToString("dd.MM.yyyy HH:mm")</dd>
+</dl>
+
+@* Form - asp-action="OturumBitir" method="post" *@
+<form asp-action="OturumBitir" method="post">
+    @* Hidden input - id *@
+    <input type="hidden" name="id" value="@Model.Id" />
+    @* Oturumu Bitir butonu + İptal linki *@
+    <button type="submit" class="btn btn-warning">Oturumu Bitir</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

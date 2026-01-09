@@ -1,0 +1,29 @@
+@model InnternetCafe.Varliklar.Kullanici
+
+@{
+    ViewData["Title"] = "Kullanıcı Sil";
+}
+
+<h1>Kullanıcı Sil</h1>
+
+<h3>Bu kullanıcıyı silmek istediğinize emin misiniz?</h3>
+
+<dl class="row">
+    <dt class="col-sm-3">Ad</dt>
+    <dd class="col-sm-9">@Model.Ad</dd>
+
+    <dt class="col-sm-3">Soyad</dt>
+    <dd class="col-sm-9">@Model.Soyad</dd>
+
+    <dt class="col-sm-3">Telefon</dt>
+    <dd class="col-sm-9">@Model.Telefon</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.Email</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

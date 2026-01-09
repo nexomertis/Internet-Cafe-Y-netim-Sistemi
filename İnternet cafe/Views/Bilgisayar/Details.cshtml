@@ -1,0 +1,23 @@
+@model InnternetCafe.Varliklar.Bilgisayar
+
+@{
+    ViewData["Title"] = "Bilgisayar Detayları";
+}
+
+<h1>Bilgisayar Detayları</h1>
+
+@* Bilgileri göster *@
+<dl class="row">
+    <dt class="col-sm-3">Bilgisayar No</dt>
+    <dd class="col-sm-9">@Model.BilgisayarNo</dd>
+
+    <dt class="col-sm-3">Durum</dt>
+    <dd class="col-sm-9">@(Model.Durum ? "Dolu" : "Boş")</dd>
+
+    <dt class="col-sm-3">Saatlik Ücret</dt>
+    <dd class="col-sm-9">@Model.SaatlikUcret TL</dd>
+</dl>
+
+@* Geri dön ve düzenle linkleri *@
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Düzenle</a>
+<a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>

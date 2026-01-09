@@ -1,0 +1,33 @@
+@* Model tanımla *@
+@model InnternetCafe.Varliklar.Oturum
+
+@* ViewData["Title"] ayarla *@
+@{
+    ViewData["Title"] = "Oturum Detayları";
+}
+
+@* h1 başlık *@
+<h1>Oturum Detayları</h1>
+
+@* dl ile bilgileri göster *@
+<dl class="row">
+    <dt class="col-sm-3">Kullanıcı ID</dt>
+    <dd class="col-sm-9">@Model.KullaniciId</dd>
+
+    <dt class="col-sm-3">Bilgisayar ID</dt>
+    <dd class="col-sm-9">@Model.BilgisayarId</dd>
+
+    <dt class="col-sm-3">Başlangıç Zamanı</dt>
+    <dd class="col-sm-9">@Model.BaslangicZamanı.ToString("dd.MM.yyyy HH:mm")</dd>
+
+    @* BitisZamani null ise "Devam Ediyor" yaz *@
+    <dt class="col-sm-3">Bitiş Zamanı</dt>
+    <dd class="col-sm-9">@(Model.BitisZamani.HasValue ? Model.BitisZamani.Value.ToString("dd.MM.yyyy HH:mm") : "Devam Ediyor")</dd>
+
+    @* ToplamUcret null ise "-" yaz *@
+    <dt class="col-sm-3">Toplam Ücret</dt>
+    <dd class="col-sm-9">@(Model.ToplamUcret.HasValue ? Model.ToplamUcret.Value + " TL" : "-")</dd>
+</dl>
+
+@* Listeye Dön linki *@
+<a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>

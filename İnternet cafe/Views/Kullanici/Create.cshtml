@@ -1,0 +1,28 @@
+@model InnternetCafe.Varliklar.Kullanici
+
+@{
+    ViewData["Title"] = "Yeni Kullanıcı";
+}
+
+<h1>Yeni Kullanıcı Ekle</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Ad" class="form-label"></label>
+        <input asp-for="Ad" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Soyad" class="form-label"></label>
+        <input asp-for="Soyad" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Telefon" class="form-label"></label>
+        <input asp-for="Telefon" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

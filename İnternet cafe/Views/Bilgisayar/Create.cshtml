@@ -1,0 +1,33 @@
+@model InnternetCafe.Varliklar.Bilgisayar
+
+@{
+    ViewData["Title"] = "Yeni Bilgisayar Ekle";
+}
+
+<h1>Yeni Bilgisayar Ekle</h1>
+
+@* Form oluştur - asp-action="Create", method="post" *@
+<form asp-action="Create" method="post">
+    
+    @* BilgisayarNo için label ve input *@
+    <div class="mb-3">
+        <label asp-for="BilgisayarNo" class="form-label"></label>
+        <input asp-for="BilgisayarNo" class="form-control" />
+    </div>
+
+    @* Durum için checkbox *@
+    <div class="mb-3">
+        <label asp-for="Durum" class="form-label"></label>
+        <input asp-for="Durum" type="checkbox" class="form-check-input" />
+    </div>
+
+    @* SaatlikUcret için input *@
+    <div class="mb-3">
+        <label asp-for="SaatlikUcret" class="form-label"></label>
+        <input asp-for="SaatlikUcret" class="form-control" />
+    </div>
+
+    @* Submit butonu *@
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

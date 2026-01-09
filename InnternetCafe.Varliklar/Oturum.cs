@@ -10,13 +10,11 @@ namespace InnternetCafe.Varliklar
     {
         public int Id { get; set; }
         public int KullaniciId { get; set; }
-        // TODO: Navigation Property ekle - public Kullanici Kullanici { get; set; }
-        public Kullanici Kullanici { get; set; }  
-        public int  BilgisayarId { get; set; }
-        // TODO: Navigation Property ekle - public Bilgisayar Bilgisayar { get; set; }
+        public Kullanici Kullanici { get; set; }
+        public int BilgisayarId { get; set; }
         public Bilgisayar Bilgisayar { get; set; }
-        public DateTime BaslangicZamanı {  get; set; }
+        public DateTime BaslangicZamanı { get; set; }
         public DateTime? BitisZamani { get; set; }
-        public decimal? ToplamUcret {  get; set; }
+        public decimal? ToplamUcret { get; set; }
     }
 }

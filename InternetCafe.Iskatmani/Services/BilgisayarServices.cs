@@ -3,13 +3,9 @@ using InternetCafe.VeriKatmani;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetCafe.Iskatmani.Services
 {
-
-    
     public class BilgisayarServices
     {
         private readonly KafedbContext _context;
@@ -18,32 +14,35 @@ namespace InternetCafe.Iskatmani.Services
         {
             _context = context;
         }
+
         public List<Bilgisayar> GetAll()
         {
             return _context.Bilgisayarlar.ToList();
         }
-        
-        // TODO: Yeni metod ekle - GetMusaitBilgisayarlar()
-        public List<Bilgisayar>GetMusaitBilgisayarlar()
+
+        public List<Bilgisayar> GetMusaitBilgisayarlar()
         {
             return _context.Bilgisayarlar.Where(b => b.Durum == false).ToList();
         }
+
         public Bilgisayar GetById(int id)
         {
             return _context.Bilgisayarlar.Find(id);
-
         }
-        public void Add (Bilgisayar bilgisayar)
+
+        public void Add(Bilgisayar bilgisayar)
         {
             _context.Bilgisayarlar.Add(bilgisayar);
             _context.SaveChanges();
         }
+
         public void Update(Bilgisayar bilgisayar)
         {
             _context.Bilgisayarlar.Update(bilgisayar);
             _context.SaveChanges();
         }
-         public void Delete(int id)
+
+        public void Delete(int id)
         {
             var bilgisayar = _context.Bilgisayarlar.Find(id);
             if (bilgisayar != null)
@@ -52,7 +51,5 @@ namespace InternetCafe.Iskatmani.Services
                 _context.SaveChanges();
             }
         }
-            
     }
-    
 }
